@@ -2,11 +2,11 @@
 // SELECT `name`, `lastname`, `document_type` FROM `ospiti` WHERE `document_type` = "CI" //
 
 2- Seleziona tutti gli ospiti che sono nati dopo il 1988:
-// SELECT `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE `date_of_birth` < "1988" //
+// SELECT `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE `date_of_birth` >= "1989-01-01" //
 
 3-Seleziona tutti gli ospiti che hanno più di 20 anni (al momento
 dell’esecuzione della query):
-// SELECT `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE `date_of_birth` < "2001" //
+// SELECT `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) > "20" //
 
 4- Seleziona tutti gli ospiti il cui nome inizia con la D:
 // SELECT `name`, `lastname` FROM `ospiti` WHERE `name` LIKE "D%" //
