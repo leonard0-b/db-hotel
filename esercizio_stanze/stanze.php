@@ -12,7 +12,7 @@
 
     //set parmeters and execute 
     $stmt->execute(); //eseguo il codice sql
-    $rows = $stmt->get_results(); //salva i risultati in una variabile
+    $rows = $stmt->get_result(); //salva i risultati in una variabile
     while ($row = $rows->fetch_assoc()) { //ciclo i risultati e li trasforma in array associativi
       $result[] = $row; //pusho i risultati dentro all'array results
     } 

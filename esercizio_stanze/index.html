@@ -4,17 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="master.css">
   <title>Hotel</title>
 </head>
 <body>
   <div id="root">
-
+    <div class="title">
+      <h1>Le nostre stanze disponibili:</h1>
+    </div>
+    <div class="container flex">
+      <div class="card" v-for="stanza in rooms">
+        <div class="card-container">
+          <p @click="roomInfos(stanza.id)">{{stanza.room_number}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="info" v-if="room != null">
+      <p v-if="room.beds == 1">La stanza ha: {{room.beds}} letto</p>
+      <p v-else="room.beds > 1">La stanza ha: {{room.beds}} letti</p>
+      <p>Si trova al {{room.floor}}° piano</p>
+    </div>    
   </div>
-  
-
-
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="main.js" charset="utf-8"></script> 
